@@ -1,268 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aghna Rezza - Portfolio</title>
-  <meta name="description" content="Portfolio of Aghna Rezza — Photonics Laboratory Assistant Candidate" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio_AghnaRezza</title>
   <style>
-    /* ====== Theme variables ====== */
-    :root{
-      --bg: #f6f9fc;
-      --card: #ffffff;
-      --muted: #6b7280;
-      --text: #0f172a;
-      --accent: linear-gradient(135deg,#05ffff,#fcb900);
+    :root {
       --primary: #05ffff;
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 8px 24px rgba(15,23,42,0.08);
-      --radius: 14px;
-    }
-    html[data-theme="dark"]{
-      --bg: #071123;
-      --card: #081226;
-      --muted: #9ca3af;
-      --text: #e6f7ff;
-      --accent: linear-gradient(135deg,#0ea5ff,#7c3aed);
-      --primary: #0ea5ff;
-      --glass: rgba(255,255,255,0.03);
-      --shadow: 0 8px 24px rgba(2,6,23,0.6);
-    }
-    /* help browsers respect theme */
-    html { color-scheme: light dark; }
-
-    /* ====== Basic layout ====== */
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
-    .container{max-width:980px;margin:28px auto;padding:20px}
-    header{
-      background:var(--accent);
-      color:white;
-      padding:42px 20px;
-      border-radius:20px;
-      position:relative;
-      box-shadow:var(--shadow);
-      display:flex;
-      gap:20px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .profile{
-      width:120px;height:120px;border-radius:50%;overflow:hidden;
-      border:4px solid rgba(255,255,255,0.9);
-      flex-shrink:0;
-      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    }
-    .profile img{width:100%;height:100%;object-fit:cover;display:block}
-    .head-info{flex:1;min-width:220px}
-    .head-info h1{margin:0;font-size:1.6rem;letter-spacing:0.2px}
-    .head-info p{margin:6px 0 0;color:rgba(255,255,255,0.95);opacity:0.95}
-    .actions{display:flex;gap:10px;margin-left:auto}
-    .btn{
-      background:#fff;border:none;padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer;
-      box-shadow:0 6px 16px rgba(2,6,23,0.12);
-    }
-    .btn.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,0.18)}
-    .btn.link{background:transparent;color:var(--text);border:1px solid rgba(0,0,0,0.06)}
-    nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-
-    /* ====== main card sections ====== */
-    section.card{
-      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-top:20px;
-    }
-    h2{margin:0 0 12px 0;color:var(--primary)}
-    p.lead{margin:0 0 6px 0;color:var(--muted)}
-
-    /* ====== skills & projects layout ====== */
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    @media (max-width:760px){.grid{grid-template-columns:1fr}}
-    .skill-list{display:flex;flex-direction:column;gap:8px}
-    .skill{background:var(--glass);padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.04)}
-    .project{background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
-    .project h3{margin:0;font-size:1rem}
-    .project p{margin:6px 0 0 0;color:var(--muted);font-size:0.95rem}
-
-    /* ====== footer ====== */
-    footer{margin:26px 0;text-align:center;color:var(--muted);font-size:0.9rem}
-
-    /* ====== small utilities ====== */
-    .row{display:flex;gap:12px;align-items:center}
-    .spacer{flex:1}
-    .social a{display:inline-block;margin-right:8px;color:var(--muted);text-decoration:none}
-    .download{
-      display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:black;padding:8px 10px;border-radius:10px;font-weight:700;border:none;cursor:pointer;
+      --accent: #fcb900;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #1e293b;
     }
 
-    /* ====== subtle animations ====== */
-    .fade-in{opacity:0;transform:translateY(8px);animation:fadeIn .6s forwards}
-    @keyframes fadeIn{to{opacity:1;transform:none}}
+    [data-theme="dark"] {
+      --primary: #1e293b;
+      --accent: #3b82f6;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #0983a1;
+    }
 
-    /* ====== sticky top nav for small devices ====== */
-    .topbar{position:sticky;top:12px;z-index:40}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #1e293b;
+        --accent: #3b82f6;
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #f1f5f9;
+      }
+    }
 
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: 0.3s;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      box-shadow: 0 8px 20px rgba(11, 7, 245, 0.788);
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.8);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    header p {
+      opacity: 0.85;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    h2 {
+      color: var(--accent);
+      border-left: 6px solid var(--accent);
+      padding-left: 0.75rem;
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .project {
+      padding: 1.2rem;
+      border: 1px solid #faaf0e;
+      border-radius: 14px;
+      margin-bottom: 1.2rem;
+      background: #ffffff;
+      transition: 0.25s;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .project {
+        background: #ffffff;
+        border: 10px solid #334155;
+      }
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgb(221, 173, 13);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #475569;
+      transition: 0.3s;
+    }
   </style>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      if (current === "dark") {
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      } else {
+        html.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <header class="fade-in topbar" role="banner">
-      <div class="profile" aria-hidden="true">
-        <!-- replace this src with your own photo path: images/Foto_Profile.jpg -->
-        <img src="Gambar/Foto Aghna.jpg" alt="Profile photo">
-      </div>
+  <header>
+    <button onclick="toggleTheme()" style="position:absolute; top:20px; right:20px; padding:8px 14px; border:none; border-radius:8px; background:white; color:#1e293b; cursor:pointer; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.2);">Theme</button>
+    <img src="Gambar/Foto Aghna.jpg" alt="Foto Profil" class="profile-pic" />
+    <h1>Portofolio</h1>
+    <p>Aghna Razaky Alfi Syahriza</p>
+  </header>
 
-      <div class="head-info">
-        <h1>Portofolio</h1>
-        <p class="lead">Aghna Razaky Alfi Syahriza</p>
-
-        <nav aria-label="Quick links">
-          <a class="btn" href="#about">About</a>
-          <a class="btn" href="#skills">Skills</a>
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn" href="#contact">Contact</a>
-        </nav>
-      </div>
-
-      <div class="actions" role="toolbar" aria-label="Actions">
-        <button class="btn" id="theme-toggle" title="Toggle theme">Toggle Theme</button>
-        <!-- put your CV file (CV.pdf) in the same folder to enable -->
-        <a class="download" id="download-cv" href="CV.pdf" download>Download CV</a>
-      </div>
-    </header>
-
-    <!-- ABOUT -->
-    <section id="about" class="card fade-in" style="animation-delay:.05s">
-      <h2>About Me</h2>
-      <p>I am an active student in the Department of Physics Engineering at 
+  <section>
+    <h2>About Me</h2>
+    <p>I am an active student in the Department of Physics Engineering at 
         the Sepuluh Nopember Institute of Technology in Surabaya. I have 
         critical thinking skills and am results-oriented in a strategic 
         and efficient manner in organizations. I also have in-depth 
         knowledge of programming, AutoCAD, and management as preparation for the world of work.</p>
-    </section>
+  </section>
 
-    <!-- SKILLS + CONTACT -->
-    <section class="card fade-in" id="skills" style="animation-delay:.1s">
-      <div class="grid">
-        <div>
-          <h2>Main Skills</h2>
-          <div class="skill-list">
-            <div class="skill">Physical & Geometrical Optics (interference, diffraction, polarization)</div>
-            <div class="skill">Fiber Optics & Total Internal Reflection</div>
-            <div class="skill">Poster Designs</div>
-            <div class="skill">Python (NumPy, Matplotlib)</div>
-            <div class="skill">Scientific reporting & data visualization</div>
-          </div>
-        </div>
+  <section>
+    <h2>Main Skills</h2>
+    <ul>
+      <li>Physical and Geometric Optics (interference, diffraction, polarization)</li>
+      <li>Optical fiber & Total Internal Reflection</li>
+      <li>Python for optical simulation</li>
+      <li>Scientific report writing & data visualization</li>
+    </ul>
+  </section>
 
-        <div>
-          <h2>Contact & Social</h2>
-          <p class="lead">Email: <a href="mailto:aghnarezza@gmail.com">aghnarezza@gmail.com</a><br>Phone: +62 821 2433 5378</p>
-          <div class="social" aria-hidden="false">
-            <a href="https://www.linkedin.com/in/aghna-razaky-alfi-syahriza" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener">GitHub</a>
-            <a href="#" target="_blank" rel="noopener">Instagram</a>
-          </div>
-          <div style="margin-top:12px">
-            <button class="btn secondary" onclick="scrollToProjects()">See Projects</button>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>Projects & Portofolio</h2>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="card fade-in" style="animation-delay:.15s">
-      <h2>Projects</h2>
-      <div style="display:grid;gap:12px;margin-top:8px">
-        <article class="project">
-          <h3>Two-slit Interference Simulation</h3>
-          <p>Python simulation of double-slit interference with adjustable wavelength, slit separation and screen distance. Includes intensity plot and parameter sweep.</p>
-        </article>
+    <div class="project">
+      <h3>1. Light Wave Interference Simulation</h3>
+      <p>Creating a two-slit interference pattern model using Python with an intensity distribution approach and variable parameters (λ, slit distance, screen distance).</p>
+    </div>
 
-        <article class="project">
-          <h3>Fiber Optic NA & TIR Analysis</h3>
-          <p>Numerical calculation of Numerical Aperture, critical angle, and acceptance cone, with documented step-by-step results.</p>
-        </article>
+    <div class="project">
+      <h3>2. Optical Fiber Studies and Numerical Aperture Calculations</h3>
+      <p>Analyzing TIR conditions, calculating critical angles and NA fiber step-index to understand light coupling efficiency.</p>
+    </div>
 
-        <article class="project">
-          <h3>SDEV Pertamina (HYSYS)</h3>
-          <p>A special training course on the HYSYS application, which is used as a simulation tool for key processes in industry.</p>
-        </article>
+    <div class="project">
+      <h3>3. SDEV Pertamina (HYSYS)</h3>
+      <p>A special training course on the HYSYS application, which is used as a simulation tool for key processes in industry. .</p>
+    </div>
 
-        <article class="project">
-          <h3>ILITSxKPK 2025</h3>
-          <p>An annual big event organized by IMAGESTIS in collaboration with ILITS with the aim of introducing ITS from an academic and non-academic perspective, as well as the environment within it, to high school/vocational school students in Gresik Regency.</p>
-        </article>
-      </div>
-    </section>
+    <div class="project">
+      <h3>4. ILITSxKPK 2025</h3>
+      <p>An annual big event organized by IMAGESTIS in collaboration with ILITS with the aim of introducing ITS from an academic and non-academic perspective, as well as the environment within it, to high school/vocational school students in Gresik Regency.</p>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="card fade-in" style="animation-delay:.2s">
-      <h2>Contact</h2>
-      <div class="row">
-        <a class="btn" href="mailto:aghnarezza@gmail.com">Email Me</a>
-        <a class="btn link" href="tel:+6282124335378">Call</a>
-        <div class="spacer"></div>
-        <a class="btn" href="#" onclick="openGitHub()">View Code (GitHub)</a>
-      </div>
-    </section>
+  <section>
+    <h2>Ceritification & Training</h2>
+    <ul>
+      <li>Self-learning: Scientific Python (NumPy, Matplotlib)</li>
+      <li>Self-study: Photonics & Optocal Physics</li>
+      <li><a href="https://drive.google.com/file/d/1BCKPiv67ogr9DdqDbxBXJniekPtZ32MU/view?usp=drive_link">Staff SDEV Pertamina</a></li>
+      <li><a href="https://drive.google.com/file/d/1IONPp4XkKFObvsEFuEi0chC_JzpbytB9/view?usp=drive_link">Staff ILITSxKPK 2025</a></li>
+    </ul>
+  </section>
 
-    <footer>
-      © 2025 • Aghna Razaky Alfi Syahriza
-    </footer>
-  </div>
+  <section>
+    <h2>Contact</h2>
+    <p>Email: aghnarezza@gmail.com</p>
+    <p>No.Telepon: +6282124335378</p>
+    <p>LinkedIn: www.linkedin.com/in/aghna-razaky-alfi-syahriza</p>
+  </section>
 
-  <script>
-    // === Theme toggle (robust) ===
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
-    function setTheme(t){
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-      // minor repaint hack
-      document.body.style.display='none';
-      requestAnimationFrame(()=>document.body.style.display='block');
-    }
-
-    // initial
-    (function(){
-      const saved = localStorage.getItem('theme');
-      if(saved){
-        root.setAttribute('data-theme', saved);
-      } else {
-        // respect prefers-color if set; otherwise default light
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-      }
-    })();
-
-    themeToggle.addEventListener('click',()=>{
-      const cur = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      setTheme(cur === 'dark' ? 'light' : 'dark');
-    });
-
-    // === utility ===
-    function scrollToProjects(){
-      document.getElementById('projects').scrollIntoView({behavior:'smooth'});
-    }
-    function openGitHub(){
-      window.open('https://github.com/yourusername','_blank');
-    }
-
-    // small accessibility: keyboard toggle (T)
-    window.addEventListener('keydown', e=>{
-      if(e.key.toLowerCase()==='t' && (e.ctrlKey || e.metaKey)){
-        e.preventDefault();
-        themeToggle.click();
-      }
-    });
-  </script>
+  <footer>
+    © 2025 | Aghna Razaky Alfi Syahriza
+  </footer>
 </body>
 </html>
